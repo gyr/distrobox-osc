@@ -5,11 +5,11 @@ FROM opensuse/tumbleweed:latest
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=org.opensuse.example
-PREFIXEDLABEL org.opencontainers.image.title="Tools + osc + Distrobox Container"
-PREFIXEDLABEL org.opencontainers.image.description="Distrobox container base with tools to manage OBS/IBS releases"
-#PREFIXEDLABEL org.opensuse.reference="registry.opensuse.org/opensuse/example:%PKG_VERSION%.%RELEASE%"
-PREFIXEDLABEL org.openbuildservice.disturl="%DISTURL%"
-PREFIXEDLABEL org.opencontainers.image.created="%BUILDTIME%"
+#PREFIXEDLABEL org.opencontainers.image.title="Tools + osc + Distrobox Container"
+#PREFIXEDLABEL org.opencontainers.image.description="Distrobox container base with tools to manage OBS/IBS releases"
+##PREFIXEDLABEL org.opensuse.reference="registry.opensuse.org/opensuse/example:%PKG_VERSION%.%RELEASE%"
+#PREFIXEDLABEL org.openbuildservice.disturl="%DISTURL%"
+#PREFIXEDLABEL org.opencontainers.image.created="%BUILDTIME%"
 
 RUN zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/openSUSE:/Tools/openSUSE_Tumbleweed openSUSE:Tools \
     && zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/openSUSE:/infrastructure/openSUSE_Tumbleweed openSUSE:infrastructure \
