@@ -1,5 +1,5 @@
 # Define the names/tags of the container
-#!BuildTag: gyribeiro/distrobox-osc:latest
+#!BuildTag: distrobox-osc:latest
 
 FROM opensuse/tumbleweed:latest
 
