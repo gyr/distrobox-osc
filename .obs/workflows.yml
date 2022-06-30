@@ -1,6 +1,6 @@
-rebuild_master:
+obs_workflow:
   steps:
-    - rebuild_package:
+    - trigger_services:
         project: home:gyribeiro:containers
         package: distrobox-osc
   filters:
