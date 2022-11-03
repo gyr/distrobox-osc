@@ -11,7 +11,9 @@ PREFIXEDLABEL org.opencontainers.image.description="Distrobox container base wit
 PREFIXEDLABEL org.openbuildservice.disturl="%DISTURL%"
 PREFIXEDLABEL org.opencontainers.image.created="%BUILDTIME%"
 
-RUN zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/openSUSE:/Tools/openSUSE_Tumbleweed openSUSE:Tools \
+RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc \
+    && zypper --non-interactive addrepo --refresh https://packages.microsoft.com/yumrepos/vscode vscode \
+    && zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/openSUSE:/Tools/openSUSE_Tumbleweed openSUSE:Tools \
     && zypper --non-interactive addrepo --refresh https://download.opensuse.org/repositories/openSUSE:/infrastructure/openSUSE_Tumbleweed openSUSE:infrastructure \
     && zypper --gpg-auto-import-keys refresh \
     && zypper --non-interactive in --no-recommends --force-resolution -fy \
@@ -19,6 +21,7 @@ RUN zypper --non-interactive addrepo --refresh https://download.opensuse.org/rep
     bc \
     build \
     ca-certificates-suse \
+    code \
     curl \
     diffutils \
     dos2unix \
